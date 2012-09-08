@@ -4,7 +4,7 @@ Imports Newtonsoft.Json
 
 Public Class postmark_inbound
 
-    '
+    ' 
     ' #### Postmark-Inbound class library
     ' #### Created by Justin Porter
     ' #### Attribution 3.0 Unported (CC BY 3.0)
