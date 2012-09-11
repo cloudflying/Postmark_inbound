@@ -5,6 +5,7 @@ New Website!
 ---------
 View our site with more information at: http://cloudflying.github.com/Postmark_inbound/
 
+
 Description:
 --------
 Using the .net framework (version 4.0) we have created a simple inbound email parser for postmark. (http://www.postmarkapp.com).
@@ -12,14 +13,21 @@ Using the .net framework (version 4.0) we have created a simple inbound email pa
 How to use:
 --------
 
-Include the following
+Create a new .aspx page in your favorite language, be it C# or vb.net. Then create a page load handler (easiest way to do this is to head over to the Designer view and double click on the white space). Include the following imports / use statements
 
-      Imports postmark_inbound
+
+      Imports postmark_inbound // vb.net
+      using postmark_inbound; // C#
 
 Next in your page load event:
 
-     Dim parser As New postmark_inbound.postmark_inbound
-     Dim Email_object As mail_object = parser.ParseInbound(HttpContext.Current.Request.InputStream)
+      // vb.net
+      Dim parser As New postmark_inbound.postmark_inbound
+      Dim Email_object As mail_object = parser.ParseInbound(HttpContext.Current.Request.InputStream)
+      // C#
+      postmark_inbound.postmark_inbound parser = new postmark_inbound.postmark_inbound();
+      mail_object Email_object = parser.ParseInbound(HttpContext.Current.Request.InputStream);
+
 
 That's it!
 
@@ -55,17 +63,21 @@ List of All Definitions:
 
 
 Lists:
+=======
 
 FromFull, ToFull, ccFull
-     Email
-     Name
+--------
+    Email
+    Name
 
 Header
-     Name
-     Value
+--------
+    Name
+    Value
 
 Attachment
-     Name
-     Content
-     ContentType
-     ContentLength
+--------
+    Name
+    Content
+    ContentType
+    ContentLength
