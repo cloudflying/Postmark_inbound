@@ -34,6 +34,15 @@ Public Class postmark_inbound
         End Try
     End Function
 
+    Public Function ParseInboundString(emailContent As String) As mail_object
+        Try
+            Dim Email As mail_object = JsonConvert.DeserializeObject(Of mail_object)(emailContent)
+            Return Email
+        Catch ex As Exception
+            Throw New ApplicationException(ex.Message)
+        End Try
+    End Function
+
 
 
 End Class
