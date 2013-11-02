@@ -8,12 +8,19 @@ Postmark inboun is now available via nuget. (https://www.nuget.org/packages/post
 Version Updates
 ---------
 1.1.3 - nuget build deployed
+
 1.1 - Added ReplyMsg string - Postmark_Inbound will now parse your emails and return the REPLY portion of the text body. No more parsing out the replied message.
+
 Verified working from the following email clients:
+
 Outlook 2013
+
 iPad / iPhone (ios 7)
+
 gMail
+
 Windows Phone 8
+
 (Have another email client you want us to verify / add? Create an Issue on GitHub)
 
 New Website!
