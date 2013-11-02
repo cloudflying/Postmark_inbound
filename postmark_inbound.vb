@@ -53,6 +53,17 @@ Public Class postmark_inbound
     Public Function ParseInboundString(emailContent As String) As mail_object
         Try
             Dim Email As mail_object = JsonConvert.DeserializeObject(Of mail_object)(emailContent)
+            Dim tempEmailStr As String = Email.TextBody
+            Dim replyMsg As String = String.Empty
+            If Len(tempEmailStr) > 0 Then
+                replyMsg = replyFromOutlook(tempEmailStr)
+                If Len(replyMsg) = 0 Then
+                    replyMsg = replyFromios(tempEmailStr)
+                End If
+                If Len(replyMsg) > 0 Then
+                    Email.replyMsg = replyMsg
+                End If
+            End If
             Return Email
         Catch ex As Exception
             Throw New ApplicationException(ex.Message)
