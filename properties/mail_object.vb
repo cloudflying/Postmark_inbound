@@ -14,6 +14,7 @@ Public Class mail_object
     Public Property [Date] As String
     Public Property MailboxHash As String
     Public Property TextBody As String
+    Public Property replyMsg As String
     Public Property HtmlBody As String
     Public Property Tag As String
     Public Property Headers As List(Of Header)
