@@ -17,6 +17,7 @@ Public Class postmark_inbound
     ' #### initial work
     ' #### version 1.0 - after over 5 months of testing we have verified this system works
     ' #### version 1.1 - Added ReplyMsg option - Now view the replied body message (Plain Text Only)
+    ' #### version 1.1.1-.3 - nuGet Updates
 
 
 
